@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Crush ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .box {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        color: #ff4d6d;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    #yes {
+        background: #ff4d6d;
+        color: white;
+    }
+
+    #no {
+        background: #999;
+        color: white;
+        position: absolute;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Hey ❤️</h1>
+    <p id="text">Kya tum mujhe pasand karti ho? 🥺</p>
+
+    <button id="yes" onclick="yesClick()">YES 💖</button>
+    <button id="no" onmouseover="moveNo()">NO 😢</button>
+</div>
+
+<script>
+    let step = 0;
+
+    function moveNo() {
+        const noBtn = document.getElementById("no");
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 50);
+
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+
+        step++;
+
+        const text = document.getElementById("text");
+
+        if (step === 1) {
+            text.innerText = "Please maan jao na 💕";
+        } else if (step === 2) {
+            text.innerText = "Ek chance de do 🥹";
+        } else if (step === 3) {
+            text.innerText = "Main tumhe bahut khush rakhunga ❤️";
+        } else if (step >= 4) {
+            text.innerText = "Ab toh YES bol do 😍";
+        }
+    }
+
+    function yesClick() {
+        document.body.innerHTML = `
+            <div style="
+                background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+                height:100vh;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                font-family:Arial;
+            ">
+                <div style="
+                    background:white;
+                    padding:40px;
+                    border-radius:20px;
+                ">
+                    <h1 style="color:#ff4d6d;">Yayyyy ❤️🎉</h1>
+                    <p style="font-size:20px;">
+                        Tumne YES bol diya 😍<br>
+                        Aaj se hum special hain 💖
+                    </p>
+                </div>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
